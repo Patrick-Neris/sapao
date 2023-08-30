@@ -1,6 +1,21 @@
+"use client";
+
 import Title from "@/components/title";
+import CardSkin from "@/components/CardSkin";
 
 export default function Home() {
+  const skins = [
+    {
+      titulo: "AWP | Atherys",
+      nota: "9.9",
+      imagem: "https://aceskins.com.br/wp-content/uploads/2021/03/xLifnHS.png",
+    },
+    {
+      titulo: "AWP | Atherys",
+      nota: "9.9",
+      imagem: "https://aceskins.com.br/wp-content/uploads/2021/03/xLifnHS.png",
+    },
+  ];
   return (
     // jsx
     <>
@@ -17,20 +32,11 @@ export default function Home() {
         </ul>
       </nav>
       <Title>Em alta</Title>
-      <div id="card" className="flex flex-col w-40 justify-center items-center">
-        <img
-          className="rounded"
-          src="https://place-hold.it/150x220/666"
-          alt=""
-        />
-        <span className="font-bold text-center line-clamp-1">nome da skin</span>
-        <div>
-          <span>9.9</span>
-        </div>
-        <a href="#" className="bg-pink-600 py-2 w-full rounded text-center">
-          detalhes
-        </a>
-      </div>
+      <section className="flex flex-wrap">
+        {skins.map((skin) => (
+          <CardSkin skin={skin} />
+        ))}
+      </section>
       <Title>Promoções</Title>
     </>
   );
