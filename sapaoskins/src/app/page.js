@@ -3,19 +3,14 @@
 import Title from "@/components/title";
 import CardSkin from "@/components/CardSkin";
 
-export default function Home() {
-  const skins = [
-    {
-      titulo: "AWP | Atherys",
-      nota: "9.9",
-      imagem: "https://aceskins.com.br/wp-content/uploads/2021/03/xLifnHS.png",
-    },
-    {
-      titulo: "AWP | Atherys",
-      nota: "9.9",
-      imagem: "https://aceskins.com.br/wp-content/uploads/2021/03/xLifnHS.png",
-    },
-  ];
+async function carregarSkins() {
+  const url = "link api"
+  const response = await fetch(url);
+  return response;
+}
+
+export default async function Home() {
+  const skins = await carregarSkins();
   return (
     // jsx
     <>
@@ -32,7 +27,7 @@ export default function Home() {
         </ul>
       </nav>
       <Title>Em alta</Title>
-      <section className="flex flex-wrap">
+      <section className="flex flex-wrap gap-2 m-2">
         {skins.map((skin) => (
           <CardSkin skin={skin} />
         ))}

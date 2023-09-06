@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function CardSkin({ skin }) {
   const [favorito, setFavorito] = useState(false);
+  const urlImagem = ``
 
   return (
     <div id="card" className="flex flex-col w-40 justify-center items-center">
