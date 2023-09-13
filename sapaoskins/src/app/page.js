@@ -4,9 +4,10 @@ import Title from "@/components/title";
 import CardSkin from "@/components/CardSkin";
 
 async function carregarSkins() {
-  const url = "link api"
+  const url = "https://api.themoviedb.org/3/trending/movie/week?api_key=1e922667481ab207d642450b0efb461e&language=pt-br"
   const response = await fetch(url);
-  return response;
+  const json = await response.json()
+  return json.results;
 }
 
 export default async function Home() {
