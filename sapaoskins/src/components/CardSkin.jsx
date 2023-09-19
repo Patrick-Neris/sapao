@@ -1,32 +1,25 @@
+"use client"
+
 import { HeartIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import useFavorito from "@/hooks/skins";
 
 export default function CardSkin({ skin }) {
-  const [favorito, setFavorito] = useState(false);
+  const {favorito, desfavoritar, favoritar} = useFavorito();
   const urlImagem = `https://image.tmdb.org/t/p/w200/${skin.poster_path}`
 
-  function favoritar(){
-    setFavorito(true)
-    // requisição para favoritar no tmdb
-  }
-
-  function desfavoritar(){
-    setFavorito(false)
-    //requisição
-  }
   return (
     <div id="card" className="flex flex-col w-40 justify-center items-center">
       {favorito ? (
         <HeartIcon
           onClick={() => {
-            setFavorito(false);
+            desfavoritar(skin);
           }}
           className="h-6 w-6 text-slate-100"
         />
       ) : (
         <HeartIcon
           onClick={() => {
-            setFavorito(true);
+            favoritar(skin);
           }}
           className="h-6 w-6 text-rose-600"
         />
