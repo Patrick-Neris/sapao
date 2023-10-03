@@ -1,10 +1,11 @@
 "use client"
 
 import Image from "next/image";
-import loginimage from "@/images/image.jpg";
+import loginimage from "@/images/login.jpg";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { serverLogin } from "@/actions/user";
 
 
 export default function Login() {
@@ -16,7 +17,8 @@ export default function Login() {
     function login(e) {
         e.preventDefault()
         if (email == "patrick@estrela.com" && senha == "123"){
-            push("/")
+            serverLogin();
+            push("/");
         } else {
             toast("Dados inválidos")
         }
@@ -29,7 +31,7 @@ export default function Login() {
             </aside>
             <main className="flex flex-col justify-center items-center p-4 h-screen w-full">
                 <h2>
-                    Skins Sapão
+                    Jogos Sapão
                 </h2>
                 <form onSubmit={login} action="" className="flex flex-col gap-2">
                     <label htmlFor="email">E-mail</label>
