@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function CardJogo({ jogo }) {
   const urlImagem = jogo.thumb;
@@ -8,7 +8,9 @@ export default function CardJogo({ jogo }) {
       <img className="rounded" src={urlImagem} alt="" />
       <span className="font-bold text-center line-clamp-1">{jogo.title}</span>
       <div>
-        <span>Nota Steam: {jogo.steamRatingPercent}</span>
+        {jogo.steamRatingPercent ? (
+          <span>Nota Steam: {jogo.steamRatingPercent}</span>
+        ) : undefined}
       </div>
       <div>
         <span>Nota Metacritic: {jogo.metacriticScore}</span>
