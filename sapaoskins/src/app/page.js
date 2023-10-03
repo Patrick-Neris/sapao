@@ -5,7 +5,6 @@ import { carregarJogos } from "@/utils/carregarJogos";
 
 export default async function Home() {
   const jogos = await carregarJogos();
-  console.log("recarregou");
   return (
     // jsx
     <>
