@@ -9,7 +9,7 @@ export default async function Home() {
     // jsx
     <>
       <NavBar />
-      <Title>Destaques</Title>
+      <Title>Jogos e Expansões</Title>
       <section className="flex flex-wrap gap-2 m-2">
         {jogos.map((jogo) => (
           <CardJogo jogo={jogo} />

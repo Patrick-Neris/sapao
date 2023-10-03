@@ -7,6 +7,10 @@ export async function definirTitulo(titulo) {
   return;
 }
 
+export async function clearTitulo() {
+  cookies().delete("titulo");
+}
+
 export async function getTitulo() {
   if (cookies().has("titulo")) {
     return cookies().get("titulo").value;

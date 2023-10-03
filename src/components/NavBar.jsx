@@ -1,6 +1,6 @@
 "use client";
 
-import { definirTitulo } from "@/utils/definirCookie";
+import { clearTitulo, definirTitulo } from "@/utils/definirCookie";
 import { serverLogout } from "@/actions/user";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -15,6 +15,7 @@ export default function NavBar() {
 
   function pesquisar(e) {
     e.preventDefault();
+    clearTitulo();
     definirTitulo(titulo);
     push("/");
   }
